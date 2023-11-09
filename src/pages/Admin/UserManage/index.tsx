@@ -3,9 +3,8 @@ import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import { ProTable, TableDropdown } from '@ant-design/pro-components';
 import {searchUsers} from "@/services/ant-design-pro/api";
 import {Image} from "antd";
+import { API } from '@/services/ant-design-pro/typings';
 
-
-// @ts-ignore
 const columns: ProColumns<API.CurrentUser>[] = [
   {
     dataIndex: 'id',
@@ -102,11 +101,14 @@ const columns: ProColumns<API.CurrentUser>[] = [
 ];
 export default () => {
   const actionRef = useRef<ActionType>();
+
+
   return (
     <ProTable<API.CurrentUser>
       columns={columns}
       actionRef={actionRef}
       cardBordered
+      // @ts-ignore
       request={async (params = {}, sort, filter) => {
         console.log(sort, filter);
         const userList = await searchUsers();
@@ -146,8 +148,6 @@ export default () => {
         onChange: (page) => console.log(page),
       }}
       dateFormatter="string"
-      headerTitle="高级表格"
-
-    />
+      headerTitle="高级表格"></ProTable>
   );
 };

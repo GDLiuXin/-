@@ -1,9 +1,11 @@
 // @ts-ignore
 /* eslint-disable */
 
+import {searchUsers} from "@/services/ant-design-pro/api";
+
 declare namespace API {
   type CurrentUser = {
-    url: string | undefined;
+    url: string;
     id:number;
     username:string;
     userAccount:string;
@@ -15,6 +17,7 @@ declare namespace API {
     createTime:Date;
     planetCode:string;
     userRole:number
+    pageSize:number;
 
   };
   /**
@@ -43,6 +46,10 @@ declare namespace API {
     current?: number;
     pageSize?: number;
   };
+
+  type searchUsers = {
+
+  }
 
   type RuleListItem = {
     key?: number;

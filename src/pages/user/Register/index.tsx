@@ -14,6 +14,7 @@ import {history} from 'umi';
 import styles from './index.less';
 import {SYSTEM_LOGO} from "@/constants";
 import {register} from "@/services/ant-design-pro/api";
+import {API} from "@/services/ant-design-pro/typings";
 const Register: React.FC = () => {
   const [type, setType] = useState<string>('account');
   //表单提交

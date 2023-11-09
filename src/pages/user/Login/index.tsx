@@ -15,6 +15,7 @@ import React, { useState } from 'react';
 import {history, Link, useModel} from 'umi';
 import styles from './index.less';
 import {SYSTEM_LOGO} from "@/constants";
+import {API} from "@/services/ant-design-pro/typings";
 const LoginMessage: React.FC<{
   content: string;
 }> = ({ content }) => (

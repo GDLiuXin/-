@@ -8,6 +8,7 @@ import {history, Link} from 'umi';
 import defaultSettings from '../config/defaultSettings';
 import {currentUser as queryCurrentUser} from './services/ant-design-pro/api';
 import {RequestConfig} from "@/.umi/plugin-request/request";
+import {API} from "@/services/ant-design-pro/typings";
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 /**
@@ -54,6 +55,7 @@ export async function getInitialState(): Promise<{
   return {
     // @ts-ignore
     fetchUserInfo,
+    // @ts-ignore
     currentUser,
     settings: defaultSettings,
   };
