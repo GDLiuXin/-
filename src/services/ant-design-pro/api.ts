@@ -56,7 +56,13 @@ export async function deleteUser(options?: { [key: string]: any }) {
     ...(options || {}),
   });
 }
-
+/** 修改用户接口 GET /api/user/modifyUser **/
+export async function  modifyUser(options?: { [key: string]: any }) {
+  return request<API.CurrentUser>('/api/user/modifyUser', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
 /** 此处后端没有提供注释 GET /api/notices */
 export async function getNotices(options?: { [key: string]: any }) {
   return request<API.NoticeIconList>('/api/notices', {

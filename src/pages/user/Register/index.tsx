@@ -10,7 +10,7 @@ import {
 } from '@ant-design/pro-components';
 import {message, Tabs} from 'antd';
 import React, { useState } from 'react';
-import {history} from 'umi';
+import {history, Link} from 'umi';
 import styles from './index.less';
 import {SYSTEM_LOGO} from "@/constants";
 import {register} from "@/services/ant-design-pro/api";
@@ -66,7 +66,9 @@ const Register: React.FC = () => {
         >
           <Tabs activeKey={type} onChange={setType}>
             <Tabs.TabPane key="account" tab={'账号密码注册'} />
+            <a href={"user/login"} ><Tabs.TabPane key="account" tab={'登陆'} /></a>
           </Tabs>
+
           {type === 'account' && (
             <>
               <ProFormText
@@ -137,7 +139,22 @@ const Register: React.FC = () => {
               />
             </>
           )}
+          <div
+            style={{
+              marginBottom: 24,
+            }}
+          >
+            <Link to="/user/login">登陆</Link>
+            <a
+              style={{
+                float: 'right',
+              }}
+            >
+              忘记密码联系管理员
+            </a>
+          </div>
         </LoginForm>
+
       </div>
       <Footer />
     </div>

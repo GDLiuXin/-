@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import moment from 'moment';
 import { parse } from 'url';
+import {API} from "@/services/ant-design-pro/typings";
 
 // mock tableListDataSource
 const genList = (current: number, pageSize: number) => {

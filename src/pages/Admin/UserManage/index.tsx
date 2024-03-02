@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import { ProTable, TableDropdown } from '@ant-design/pro-components';
 import {searchUsers} from "@/services/ant-design-pro/api";
+//import {deleteUser} from "@/services/ant-design-pro/api";
 import {Image} from "antd";
 import { API } from '@/services/ant-design-pro/typings';
 
@@ -77,11 +78,10 @@ const columns: ProColumns<API.CurrentUser>[] = [
     valueType: 'option',
     key: 'option',
     render: (text, record, _, action) => [
-      <a
-        key="editable"
-        onClick={() => {
-          action?.startEditable?.(record.id);
-        }}
+      <a key='editable'
+         onClick={() => {
+         action?.startEditable?.(record.id)}
+       }
       >
         编辑
       </a>,
@@ -101,15 +101,13 @@ const columns: ProColumns<API.CurrentUser>[] = [
 ];
 export default () => {
   const actionRef = useRef<ActionType>();
-
-
   return (
     <ProTable<API.CurrentUser>
       columns={columns}
       actionRef={actionRef}
       cardBordered
       // @ts-ignore
-      request={async (params = {}, sort, filter) => {
+      request={async (_params = {}, sort, filter) => {
         console.log(sort, filter);
         const userList = await searchUsers();
         return{
