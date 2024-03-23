@@ -6,12 +6,14 @@ import {extend} from 'umi-request';
 import {stringify} from "querystring";
 import { history } from 'umi';
 import {message} from "antd";
+import * as process from "process";
 
 /**
  * 配置request请求时的默认参数
  */
 const request = extend({
   credentials: 'include', // 默认请求是否带上cookie
+  prefix: process.env.NODE_ENV === 'production' ? 'http://120.79.50.86:8080' : undefined
   // requestType: 'form',
 });
 

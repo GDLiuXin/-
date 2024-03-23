@@ -55,7 +55,7 @@ const Register: React.FC = () => {
             },
         }}
           logo={<img alt="logo" src={SYSTEM_LOGO} />}
-          title="用户管理中心"
+          title="易用用户管理中心"
           subTitle={'XHB'}
           initialValues={{
             autoLogin: true,

@@ -7,6 +7,7 @@ import type {RunTimeLayoutConfig} from 'umi';
 import {history, Link} from 'umi';
 import defaultSettings from '../config/defaultSettings';
 import {currentUser as queryCurrentUser} from './services/ant-design-pro/api';
+// @ts-ignore
 import {RequestConfig} from "@/.umi/plugin-request/request";
 import {API} from "@/services/ant-design-pro/typings";
 const isDev = process.env.NODE_ENV === 'development';
